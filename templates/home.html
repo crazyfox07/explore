@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}科学探索{% endblock %}
+{% block content %}
+    <div class="title"><h1>科学探索</h1></div>
+    <div>
+        <table>
+            {% for row in range(rows) %}
+                <tr>
+                    {% for col in range(cols) %}
+                        <td>
+                            <a href="{{ resutls[row*cols+col]['link'] }}">
+                                {% if resutls[row*cols+col]['img_name'] %}
+                                    <img src="{{ '../static/imgs/{}'.format(resutls[row*cols+col]['img_name']) }}"
+                                         style="background-color: rgb(182, 173, 173); width: 205px; height: 200px;">
+                                {% endif %}
+                            </a>
+                            <h3><a href="{{ resutls[row*cols+col]['link'] }}"
+                                   style="color: darkslategray">{{ resutls[row*cols+col]['title'] }}</a></h3>
+                            <h5>{{ resutls[row*cols+col]['brief'] }}</h5>
+                            <h6>{{ resutls[row*cols+col]['create_time'] }}</h6>
+
+                        </td>
+                    {% endfor %}
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

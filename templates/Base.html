@@ -1,0 +1,30 @@
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='explore_css.css') }}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+{% block content %}{% endblock %}
+<div class="paginator">
+    <ul>
+        <li class="page"><a href="?page=1" class="pure-menu-link">首页</a></li>
+        <li class="page"><a href="?page={{ [current_page,-1]|sum }}" class="pure-menu-link">< pre</a></li>
+        <li class="page"> 第{{ current_page }}页</li>
+        {% if current_page==total_page %}
+            <li class="page"><a href="?page={{ current_page }}" class="pure-menu-link">next ></a></li>
+        {% else %}
+            <li class="page"><a href="?page={{ [current_page,1]|sum }}" class="pure-menu-link">next ></a></li>
+        {% endif %}
+        <li class="page"><a href="?page={{ total_page }}" class="pure-menu-link">尾页</a></li>
+    </ul>
+
+</div>
+
+
+</body>
+</html>
