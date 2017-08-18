@@ -1,7 +1,7 @@
 
 [mysql-db]
 MYSQL_HOST = 127.0.0.1
-MYSQL_PWD = mime@123
+MYSQL_PWD = 687090asdfg
 MYSQL_USER = root
 MYSQL_PORT = 3306
 MYSQLS_DB_NAME = explore

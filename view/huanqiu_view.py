@@ -54,7 +54,7 @@ def huanqiu():
             infos.append(
                 {'id': item.id, 'title': item.title, 'link': item.link, 'brief': item.brief.replace('[详细]', ''),
                  'create_time': item.create_time, 'img_name': ''})
-    print(infos)
+    # print(infos)
     if page > TOTAL_PAGE:
         page = TOTAL_PAGE
     return render_template('home.html', resutls=infos, rows=ROWS, cols=COLS, current_page=page, total_page=TOTAL_PAGE)

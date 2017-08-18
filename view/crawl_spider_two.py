@@ -16,6 +16,9 @@ import os
 
 from view.util.redis_api import exists_url_hash, add_url_hash
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def func(item):
     if item.find('img'):
@@ -52,9 +55,9 @@ class Crawl_HuanQiu(object):
         create_time = item[3]
         img_url = item[4]
         if not exists_url_hash(link):
-            db_session.add(HuanQiuOrm(title=title,
+            db_session.add(HuanQiuOrm(title=title.encode('utf-8'),
                                       link=link,
-                                      brief=brief,
+                                      brief=brief.encode('utf-8'),
                                       create_time=create_time,
                                       img_url=img_url))
             db_session.commit()

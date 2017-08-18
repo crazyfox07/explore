@@ -11,7 +11,7 @@ import configparser
 from hashlib import md5
 
 cp = configparser.SafeConfigParser()
-cp.read('D:/project/myproject/explore/model/db_conf')
+cp.read('/usr/lxw/explore/model/db_conf')
 
 host = cp.get('redis-db', 'REDIS_HOST')
 port = cp.get('redis-db', 'REDIS_PORT')
@@ -20,7 +20,7 @@ db_distinct = cp.get('redis-db', 'REDIS_DB_DISTINCT')
 redis_set_name = cp.get('redis-db', 'REDIS_SET_NAME')
 
 # 去重
-pool_3 = redis.ConnectionPool(host=host, port=port, db=db_distinct, password=password)
+pool_3 = redis.ConnectionPool(host=host, port=port, db=db_distinct)
 r_distinct = redis.StrictRedis(connection_pool=pool_3)
 
 

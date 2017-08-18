@@ -1,4 +1,7 @@
 
+.box{
+    background-color: rgb(238, 238, 238);
+}
 ul {
 
     width: 100%; /*这里设置为确定的值也可以*/

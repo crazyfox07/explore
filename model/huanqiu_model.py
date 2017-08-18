@@ -12,7 +12,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import configparser
 
 cp = configparser.SafeConfigParser()
-cp.read('D:/project/myproject/explore/model/db_conf')
+cp.read('/usr/lxw/explore/model/db_conf')
 
 user = cp.get('mysql-db', 'MYSQL_USER')
 pwd = cp.get('mysql-db', 'MYSQL_PWD')
