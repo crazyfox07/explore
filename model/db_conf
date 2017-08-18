@@ -1,8 +1,8 @@
 
 [mysql-db]
 MYSQL_HOST = 127.0.0.1
-MYSQL_PWD = 687090asdfg
 MYSQL_USER = root
+MYSQL_PWD = mime@123
 MYSQL_PORT = 3306
 MYSQLS_DB_NAME = explore
 
@@ -13,3 +13,8 @@ REDIS_DB_DISTINCT = 3
 REDIS_PORT = 6379
 REDIS_SET_NAME = huanqiu:task_remove_repeate
 
+[windows]
+PATH=D:\project\myproject\
+
+[ubuntu]
+PATH=/usr/lxw/

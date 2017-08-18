@@ -10,9 +10,16 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import configparser
+import platform
+
+
+if platform.system()=='Windows':
+    path='D:\project\myproject\explore/model/db_conf'
+else:
+    path='/usr/lxw/explore/model/db_conf'
 
 cp = configparser.SafeConfigParser()
-cp.read('/usr/lxw/explore/model/db_conf')
+cp.read(path)
 
 user = cp.get('mysql-db', 'MYSQL_USER')
 pwd = cp.get('mysql-db', 'MYSQL_PWD')
@@ -34,3 +41,6 @@ class HuanQiuOrm(Base):
     brief = Column(String(64))
     create_time = Column(DateTime)
     img_url = Column(String(128))
+
+
+

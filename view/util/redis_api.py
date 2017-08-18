@@ -9,9 +9,14 @@ Date: '2017/3/7' '15:43'
 import redis
 import configparser
 from hashlib import md5
+import platform
 
 cp = configparser.SafeConfigParser()
-cp.read('/usr/lxw/explore/model/db_conf')
+if platform.system()=='Windows':
+    path='D:\project\myproject\explore/model/db_conf'
+else:
+    path='/usr/lxw/explore/model/db_conf'
+cp.read(path)
 
 host = cp.get('redis-db', 'REDIS_HOST')
 port = cp.get('redis-db', 'REDIS_PORT')
